@@ -1,0 +1,14 @@
+[
+    {
+        "src": "/assets/carousel-img/1.jpg",
+        "alt": "img 1"
+    },
+    {
+        "src": "/assets/carousel-img/2.jpg",
+        "alt": "img 2"
+    },
+    {
+        "src": "/assets/carousel-img/3.jpg",
+        "alt": "img 3"
+    }
+]
