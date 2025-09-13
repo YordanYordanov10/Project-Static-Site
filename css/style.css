@@ -3,3 +3,19 @@
     object-fit: cover;
     margin-bottom: 10rem;
 }
+
+header{
+    position: relative;
+    z-index: 2000;
+}
+
+.card{
+    width: 20 rem;
+    
+}
+
+.card:hover .card-img-top {
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+}
+
