@@ -1,21 +1,50 @@
+body {
+    background-color: rgb(206, 164, 164);
+}
+
+.navbar{
+    background-color: #7ab929;
+}
+
+.btn-go{
+    background-color: #e30613;
+}
+
 .carousel-item img {
     height: 400px;
     object-fit: cover;
-    margin-bottom: 10rem;
 }
 
-header{
+header {
     position: relative;
     z-index: 2000;
 }
 
-.card{
+.card {
     width: 20 rem;
-    
+
 }
 
 .card:hover .card-img-top {
-  opacity: 0.4;
-  transition: opacity 0.4s ease;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
+.btn-subscribe {
+    background-color: #e30613;
+    color: #fff;
+    border: none;
+}
+
+.col-subscribe {
+    font-size: 30px;
+}
+
+.btn.btn-subscribe:hover {
+    background-color: #7ab929;
+}
+
+.conainer-lg.overflow-hidden {
+    padding: 50px;
+    margin: 50px;
+}
