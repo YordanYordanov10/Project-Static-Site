@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(206, 164, 164);
+    
 }
 
 .promo{
@@ -25,6 +25,13 @@ body {
 }
 
 
+.carousel-control-next, .carousel-control-prev {
+    top: 50%;
+    bottom: auto;
+    height: 100px;
+}
+
+
 header {
     position: relative;
     z-index: 2000;
@@ -33,6 +40,7 @@ header {
 .card {
     width: 20 rem;
 }
+
 
 .card:hover .card-img-top {
     opacity: 0.6;
