@@ -1,4 +1,5 @@
 body {
+    font-family: 'Poppins', sans-serif;
     background-color: rgb(206, 164, 164);
 }
 
@@ -19,6 +20,11 @@ body {
     object-fit: cover;
 }
 
+#slider {
+    position: relative;
+}
+
+
 header {
     position: relative;
     z-index: 2000;
@@ -26,7 +32,6 @@ header {
 
 .card {
     width: 20 rem;
-
 }
 
 .card:hover .card-img-top {
@@ -34,7 +39,11 @@ header {
     transition: opacity 0.3s ease;
 }
 
-.btn-subscribe {
+.card:hover{
+    border-color: #7ab929;
+}
+
+.btn, .badge {
     background-color: #e30613;
     color: #fff;
     border: none;
@@ -44,11 +53,27 @@ header {
     font-size: 30px;
 }
 
-.btn.btn-subscribe:hover {
+.btn:hover {
     background-color: #7ab929;
+}
+
+
+.glow:hover{
+     color: #7ab929;
+}
+
+.badge:hover {
+    background-color: #7ab929;  
 }
 
 .conainer-lg.overflow-hidden {
     padding: 50px;
     margin: 50px;
 }
+
+
+
+
+
+
+
