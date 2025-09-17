@@ -16,37 +16,137 @@
 </head>
 
 <body>
+    <header>
+         <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark text-white">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">FishyWish
+                    <img src="/assets/logo-img/fishing.png" width="40" height="40" alt="">
+                </a>
 
-    <div class="container contact-form mt-5 mb-2 border">
-        <div class="d-flex justify-content-center align-items-center p-5 rounded fs-1">
-        Contact
+                <form class="input-group w-auto mb-0" role="search">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button class="btn btn-danger" type="submit">Go</button>
+                </form>
+
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto fs-5 text-white">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container contact-form mt-5 mb-5 border bg-light">
+        <div class="row d-flex justify-content-center align-items-center p-5 rounded fs-1">
+            Contact
         </div>
-        <form action="">
+        <form action="" class="needs-validation" novalidate>
             <div class="mb-3">
                 <label for="name">Name:</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="name"><i class="bi bi-person-circle"></i></span>
                     <input type="text" class="form-control" placeholder="Enter your name" aria-label="name"
-                        aria-describedby="name">
+                        aria-describedby="name" minlength="3" maxlength="30" required>
+                    <div class="valid-feedback">Looks good</div>
+                    <div class="invalid-feedback">
+                        Name must be between 3 and 30 characters.
+                    </div>
                 </div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="email">Email:</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="email"><i class="bi bi-envelope-at-fill"></i></span>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                    <div class="valid-feedback">Looks good</div>
+                    <div class="invalid-feedback">
+                        Please type valid email.
+                    </div>
                 </div>
             </div>
-            <label for="message">Message:</label>
-            <textarea class="form-control" rows="5" id="message" name="text" placeholder="Message"></textarea>
+
+            <div class="mb-3 mt-3">
+                <label for="message">Message:</label>
+                <textarea class="form-control" rows="5" id="message" name="text" placeholder="Message"
+                    required></textarea>
+                <div class="valid-feedback">Looks good</div>
+                <div class="invalid-feedback">
+                    Please leave your message.
+                </div>
+            </div>
+
+            <div class="d-flex text-white p-3 rounded">
+                <div class="mb-2 mt-3 text-dark">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="d-flex justify-content-center align-items-center text-white p-3 rounded">
-            <button type="submit" class="btn btn-primary mt-5">Submit</button>
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </div>
         </form>
     </div>
 
+     <footer>
+        <div class="container-fluid section-subscribe py-4 bg-secondary">
+            <div class="row justify-content-md-center">
+
+                <div class="col col-lg-3 col-subscribe text-white">
+                    <strong>Subscribe &amp; Save</strong>
+                </div>
+
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                        <input id="newsletter" type="email" class="form-control" name="email"
+                            placeholder="Enter your email address">
+                    </div>
+                </div>
+
+
+                <div class="col-sm-1">
+                    <button class="btn btn-subscribe btn-danger w-100" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid section-copyright bg-dark text-white pt-3">
+            <div class="row">
+                <div class="col text-center">
+                    <p><strong>"Copyright FishyFish. All rights reserved!</strong></p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/carousel.js"></script>
+    <script src="js/form-validation.js"></script>
 </body>
 
 </html>

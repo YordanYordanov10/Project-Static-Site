@@ -1,6 +1,7 @@
+
 body {
     font-family: 'Poppins', sans-serif;
-    
+    background-color: #efe9e9;
 }
 
 .promo{
@@ -26,7 +27,7 @@ body {
 
 
 .carousel-control-next, .carousel-control-prev {
-    top: 50%;
+    top: 30%;
     bottom: auto;
     height: 100px;
 }
@@ -74,9 +75,12 @@ header {
     background-color: #7ab929;  
 }
 
-.conainer-lg.overflow-hidden {
-    padding: 50px;
-    margin: 50px;
+
+
+
+.contact-form{
+    max-width: 750px;
+    max-height: 750px;
 }
 
 
