@@ -52,6 +52,10 @@ header {
     border-color: #7ab929;
 }
 
+.accordion-button:hover {
+    color: #7ab929;
+}
+
 .btn, .badge {
     background-color: #e30613;
     color: #fff;
