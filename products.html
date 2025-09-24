@@ -55,65 +55,58 @@
         </nav>
     </header>
 
-    <h1><strong>Reels</strong></h1>
+    <Main>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-5 mb-4">
+                    <h4 class="mb-3">Add Product</h4>
+                    <select name="Category" id="pickCategory" class="form-select mb-3">
+                        <option selected>Pick category</option>
+                        <option value="1">Reels</option>
+                        <option value="2">Rods</option>
+                        <option value="3">Chairs</option>
+                        <option value="4">Luggage</option>
+                        <option value="5">Bait Additives</option>
+                        <option value="6">Alarms</option>
+                        <option value="7">Bivvies Shelters</option>
+                        <option value="8">Tackle Boxes</option>
+                    </select>
 
-    <div class="container-lg">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Read more
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <h2>A Prime Selection of Fishing Reels: Experience Unrivalled Angling</h2>
-                        <p>Welcome to our exceptional range of fishing reels, where technology meets tradition. As you
-                            explore, you'll find a curated selection of Fixed Spool Reels and Multiplier Reels, each
-                            delivering unrivalled quality and performance. Whether you're a beginner or a seasoned pro,
-                            we
-                            cater to all your angling needs.</p>
-                        <h3>The Power of Modern Fishing Reels</h3>
-                        <p>The world of angling has experienced profound growth, particularly in the realm of fishing
-                            reels.
-                            Thanks to pioneering technology, lighter and stronger performance pieces continually emerge,
-                            enhancing your experience by the water's edge. From coarse, carp, specimen, fly, sea, to
-                            predator angling, we have a reel specifically crafted to optimise your style of fishing.</p>
-                        <h3>Choosing the Perfect Reel for Your Style of Angling</h3>
-                        <p>The diversity of fishing reels is vast, each one designed to suit a unique style of angling.
-                            Our
-                            collection boasts everything from Fixed Spool Reels to free spool, baitrunner, big pit
-                            reels,
-                            fly reels, centrepin reels, and feeder reels. Making the right choice can be a challenge,
-                            but
-                            we're here to help. Visit our local Angling Direct stores for expert guidance or explore our
-                            dedicated guide to Fishing Reels on our blog.</p>
-                        <h3>Brands That Define Quality: Daiwa, Sonik, Fox, Nash, Advanta and more!</h3>
-                        <p>Our category features some of the most cutting-edge brands, each pushing the boundaries of
-                            reel
-                            technology. Daiwa, Sonik, Fox, and Nash stand tall among our offerings, boasting superior
-                            specifications. If you're after remarkable quality that doesn't break the bank, our Advanta
-                            range is well worth exploring.</p>
-                        <h3>A Reel for Every Rod, Every Angler, Every Adventure</h3>
-                        <p>Here at Angling Direct, we stock fishing reels to suit all types of rods and fishing trips.
-                            Our
-                            equipment, designed and manufactured by top brands, ensures you have the perfect reel for
-                            your
-                            angling escapades. Searching for something lighter or with more line capacity than your
-                            current
-                            reel? You're in the right place.
+                    <select name="Product" id="pickProduct" class="form-select mb-3">
+                        <option selected>Choose product</option>
+                        <option value="1">Berkley fishing line 0.20</option>
+                        <option value="2">Shimano Vanford 4000</option>
+                    </select>
 
-                            Our collection caters to anglers of all abilities and levels of experience. With options
-                            that
-                            combine quality with affordability, you'll find the perfect reel to help you land your dream
-                            catch.</p>
+                    <input type="number" id="quantityInput" class="form-control mb-3" min="1" placeholder="Quantity">
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-danger rounded-4 mt-1 mb-2">
+                            Add to basket
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="col-md-7">
+                    <h4 class="mb-3">Selected items</h4>
+                    <ul class="list-group" id="basketList">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Berkley fishing
+                            line 0.20 <span>
+                                <button class="btn btn-sm btn-outline-secondary me-1">Edit</button>
+                                <button class="btn btn-sm btn-outline-danger">Delete</button>
+                            </span></li>
+
+                    </ul>
+
+                    <div class="d-flex justify-content-center" id="confirmOrder">
+                        <button class="btn btn-danger rounded-4 mt-1 mb-2">
+                            Confirm Order
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </Main>
 
     <!-- Footer -->
     <footer>
