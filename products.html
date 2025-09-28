@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-md-5 mb-4">
                     <h4 class="mb-3">Add Product</h4>
-                    <select name="Category" id="pickCategory" class="form-select mb-3">
+                    <select title="categorySelect" name="Category" id="pickCategory" class="form-select mb-3">
                         <option selected>Pick category</option>
                         <option value="Reels">Reels</option>
                         <option value="Rods">Rods</option>
@@ -72,7 +72,7 @@
                         <option value="Tackle Boxes">Tackle Boxes</option>
                     </select>
 
-                    <select name="Product" id="pickProduct" class="form-select mb-3">
+                    <select title="productSelect" name="Product" id="pickProduct" class="form-select mb-3">
                         <option selected>Choose product</option>
                         <option value="Berkley fishing line 0.20">Berkley fishing line 0.20</option>
                         <option value="Shimano Vanford 4000">Shimano Vanford 4000</option>
@@ -97,6 +97,19 @@
                             Confirm Order
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-7">
+                    <h4 class="mb-5 mt-4">Confirmed Products to Basket</h4>
+                    <div class="mb-2 d-flex justify-content-between fw-bold px-3">
+                        <span>Category</span>
+                        <span>Product</span>
+                        <span>Quantity</span>
+                    </div>
+                    <ul class="list-group" id="confirmedToBasket">
+                    </ul>
                 </div>
             </div>
         </div>

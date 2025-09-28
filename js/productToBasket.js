@@ -8,6 +8,13 @@ function solve() {
     const basketList = document.getElementById('basketList');
     const addBasketButton = document.getElementById('addToBasket')
     const confirmOrderButton = document.getElementById('confirmOrder');
+    const confirmedToBasket = document.getElementById('confirmedToBasket');
+
+    const saved = JSON.parse(localStorage.getItem('basketProducts') || '[]');
+    saved.forEach(prod => {
+        const li = createElement(prod.category, prod.product, prod.quantity);
+        confirmedToBasket.appendChild(li);
+    });
 
     togleConfirmButton();
 
@@ -24,6 +31,31 @@ function solve() {
             basketList.appendChild(liElement);
             togleConfirmButton();
         }
+
+        confirmOrderButton.addEventListener('click', () => {
+            confirmedToBasket.innerHTML = '';
+
+            const products = [];
+
+            const liItems = basketList.querySelectorAll('.list-group-item')
+
+            liItems.forEach(li => {
+                const [catEl, prodEl, qtyEl] = li.querySelectorAll('p');
+                const itemObj = {
+                    category: catEl.textContent.trim(),
+                    product: prodEl.textContent.trim(),
+                    quantity: qtyEl.textContent.trim()
+                };
+                products.push(itemObj);
+
+                confirmedToBasket.appendChild(li.cloneNode(true))
+            });
+
+            localStorage.setItem('basketProducts', JSON.stringify(products));
+            console.log('Saved:', products);
+
+
+        })
     })
 
     function createElement(category, product, quantity) {
@@ -78,11 +110,11 @@ function solve() {
         quantityInput.value = "";
     }
 
-    function togleConfirmButton(){
-       if(basketList.children.length === 0){
-        confirmOrderButton.style.display = "none";
-       }else{
-        confirmOrderButton.style.display = "block";
-       }
+    function togleConfirmButton() {
+        if (basketList.children.length === 0) {
+            confirmOrderButton.style.display = "none";
+        } else {
+            confirmOrderButton.style.display = "block";
+        }
     }
 }
