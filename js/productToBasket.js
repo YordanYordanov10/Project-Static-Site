@@ -19,6 +19,7 @@ function solve() {
     togleConfirmButton();
 
     addBasketButton.addEventListener('click', (event) => {
+        event.preventDefault();
 
         if (categoryInput.value !== "" && productInput.value !== "" && quantityInput.value !== "") {
 
@@ -28,35 +29,36 @@ function solve() {
 
             clearInput();
             const liElement = createElement(category, product, quantity);
+            const spanElement = createButtonsElement();
+            liElement.appendChild(spanElement);
             basketList.appendChild(liElement);
             togleConfirmButton();
         }
+    });
 
-        confirmOrderButton.addEventListener('click', () => {
-            confirmedToBasket.innerHTML = '';
+    confirmOrderButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        confirmedToBasket.innerHTML = '';
 
-            const products = [];
+        const products = [];
 
-            const liItems = basketList.querySelectorAll('.list-group-item')
+        const liItems = basketList.querySelectorAll('.list-group-item');
 
-            liItems.forEach(li => {
-                const [catEl, prodEl, qtyEl] = li.querySelectorAll('p');
-                const itemObj = {
-                    category: catEl.textContent.trim(),
-                    product: prodEl.textContent.trim(),
-                    quantity: qtyEl.textContent.trim()
-                };
-                products.push(itemObj);
+        liItems.forEach(li => {
+            const [catEl, prodEl, qtyEl] = li.querySelectorAll('p');
+            const itemObj = {
+                category: catEl.textContent.trim(),
+                product: prodEl.textContent.trim(),
+                quantity: qtyEl.textContent.trim()
+            };
+            products.push(itemObj);
 
-                confirmedToBasket.appendChild(li.cloneNode(true))
-            });
+            confirmedToBasket.appendChild(li.cloneNode(true))
+        });
 
-            localStorage.setItem('basketProducts', JSON.stringify(products));
-            console.log('Saved:', products);
-
-
-        })
-    })
+        localStorage.setItem('basketProducts', JSON.stringify(products));
+   
+    });
 
     function createElement(category, product, quantity) {
         const categoryElement = document.createElement('p');
@@ -68,6 +70,17 @@ function solve() {
         const quantityElement = document.createElement('p');
         quantityElement.textContent = quantity;
 
+        const liElement = document.createElement('li');
+        liElement.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+        liElement.appendChild(categoryElement);
+        liElement.appendChild(productElement);
+        liElement.appendChild(quantityElement);
+
+        return liElement;
+
+    }
+
+    function createButtonsElement() {
         const editButton = document.createElement('button');
         editButton.classList.add('btn', 'btn-sm', 'btn-outline-secondary', 'me-1');
         editButton.textContent = 'Edit';
@@ -93,15 +106,7 @@ function solve() {
         spanElement.appendChild(editButton);
         spanElement.appendChild(deleteButton);
 
-        const liElement = document.createElement('li');
-        liElement.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
-        liElement.appendChild(categoryElement);
-        liElement.appendChild(productElement);
-        liElement.appendChild(quantityElement);
-        liElement.appendChild(spanElement);
-
-        return liElement;
-
+        return spanElement;
     }
 
     function clearInput() {
