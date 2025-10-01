@@ -1,7 +1,7 @@
 window.addEventListener('load', solve);
 
 function solve() {
-
+    const form = document.getElementById('productForm');
     const categoryInput = document.getElementById('pickCategory');
     const productInput = document.getElementById('pickProduct');
     const quantityInput = document.getElementById('quantityInput');
@@ -21,19 +21,23 @@ function solve() {
     addBasketButton.addEventListener('click', (event) => {
         event.preventDefault();
 
-        if (categoryInput.value !== "" && productInput.value !== "" && quantityInput.value !== "") {
-
-            const category = categoryInput.value;
-            const product = productInput.value;
-            const quantity = quantityInput.value;
-
-            clearInput();
-            const liElement = createElement(category, product, quantity);
-            const spanElement = createButtonsElement();
-            liElement.appendChild(spanElement);
-            basketList.appendChild(liElement);
-            togleConfirmButton();
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated'); 
+            return;
         }
+
+        const category = categoryInput.value;
+        const product = productInput.value;
+        const quantity = quantityInput.value;
+
+        clearInput();
+        form.classList.remove('was-validated');
+        const liElement = createElement(category, product, quantity);
+        const spanElement = createButtonsElement(liElement, category, product, quantity);
+        liElement.appendChild(spanElement);
+        basketList.appendChild(liElement);
+        togleConfirmButton();
+
     });
 
     confirmOrderButton.addEventListener('click', (event) => {
@@ -43,7 +47,6 @@ function solve() {
         const products = [];
 
         const liItems = basketList.querySelectorAll('.list-group-item');
-
         liItems.forEach(li => {
             const [catEl, prodEl, qtyEl] = li.querySelectorAll('p');
             const itemObj = {
@@ -53,11 +56,12 @@ function solve() {
             };
             products.push(itemObj);
 
-            confirmedToBasket.appendChild(li.cloneNode(true))
+            const confirmLiElement = createElement(itemObj.category,itemObj.product,itemObj.quantity);
+            confirmedToBasket.appendChild(confirmLiElement)
         });
 
         localStorage.setItem('basketProducts', JSON.stringify(products));
-   
+
     });
 
     function createElement(category, product, quantity) {
@@ -80,7 +84,7 @@ function solve() {
 
     }
 
-    function createButtonsElement() {
+    function createButtonsElement(liElement, category, product, quantity) {
         const editButton = document.createElement('button');
         editButton.classList.add('btn', 'btn-sm', 'btn-outline-secondary', 'me-1');
         editButton.textContent = 'Edit';
