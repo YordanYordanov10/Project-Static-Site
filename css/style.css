@@ -8,6 +8,20 @@ body {
     flex-direction: column;
 }
 
+body.login-page {
+  background: url("/assets/login-img/login-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+body.login-page .login-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+
 main {
     flex: 1; 
 }
@@ -97,6 +111,7 @@ header {
     max-width: 750px;
     max-height: 750px;
 }
+
 
 
 
