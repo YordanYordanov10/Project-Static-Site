@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
@@ -8,22 +9,22 @@ body {
     flex-direction: column;
 }
 
-body.login-page {
-  background: url("/assets/login-img/login-bg.png") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+body.login-reg-page {
+    background: url("/assets/login-img/login-bg.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
-body.login-page .login-card {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+body.login-reg-page .login-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 main {
-    flex: 1; 
+    flex: 1;
 }
 
 
@@ -32,15 +33,15 @@ body {
     background-color: #efe9e9;
 }
 
-.promo{
-     background-color: #e30613;
+.promo {
+    background-color: #e30613;
 }
 
-.navbar{
+.navbar {
     background-color: #7ab929;
 }
 
-.btn-go{
+.btn-go {
     background-color: #e30613;
 }
 
@@ -54,7 +55,8 @@ body {
 }
 
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
     top: 30%;
     bottom: auto;
     height: 100px;
@@ -76,7 +78,7 @@ header {
     transition: opacity 0.3s ease;
 }
 
-.card:hover{
+.card:hover {
     border-color: #7ab929;
 }
 
@@ -84,7 +86,8 @@ header {
     color: #7ab929;
 }
 
-.btn, .badge {
+.btn,
+.badge {
     background-color: #e30613;
     color: #fff;
     border: none;
@@ -99,24 +102,42 @@ header {
 }
 
 
-.glow:hover{
-     color: #7ab929;
+.glow:hover {
+    color: #7ab929;
 }
 
 .badge:hover {
-    background-color: #7ab929;  
+    background-color: #7ab929;
 }
 
-.contact-form{
+.contact-form {
     max-width: 750px;
     max-height: 750px;
 }
 
+.login-register-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.register-link,
+.login-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #7ab929;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.register-link:hover,
+.login-link:hover {
+    color: #e30613;
+}
 
 
-
-
-
-
-
-
+.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
